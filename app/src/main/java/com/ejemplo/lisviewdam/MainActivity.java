@@ -2,6 +2,7 @@ package com.ejemplo.lisviewdam;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,7 +34,10 @@ public class MainActivity extends AppCompatActivity {
         lvAlumnos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this,((TextView)view).getText(),Toast.LENGTH_LONG);
+                //efecto de rotación sobre el item seleccionado
+                view.animate().rotationXBy(360);
+
+                Toast.makeText(MainActivity.this,((TextView)view).getText(),Toast.LENGTH_LONG).show();
             }
         });
         //asignación del adaptor al ListView
